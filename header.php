@@ -25,22 +25,30 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sp-theme' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+    <div class="container">
+      <div class="row">
+        <div class="site-branding col-md-5">
+          <?php the_custom_logo(); ?>
+          <a class="site-title-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+            <?php $description = get_bloginfo( 'description', 'display' );
+            if ( $description || is_customize_preview() ) : ?>
+              <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+            <?php
+            endif;
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+            if ( is_front_page() ) : ?>
+              <h1 class="site-title">&laquo;<?php bloginfo( 'name' ); ?>&raquo;</h1>
+            <?php else : ?>
+              <h2 class="site-title">&laquo;<?php bloginfo( 'name' ); ?>&raquo;</h2>
+            <?php
+            endif; ?>
+          </a>
+        </div><!-- .site-branding -->
+        <div class="col-md-7">
+          <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="">
+        </div>
+      </div>
+    </div>
 
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sp-theme' ); ?></button>

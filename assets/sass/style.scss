@@ -15,15 +15,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 SP Theme is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
 # Typography
 # Elements
 # Forms
@@ -44,11 +40,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
-
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-@import "normalize";
 
 /*--------------------------------------------------------------
 # Typography
@@ -104,3 +95,33 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+
+/* ====================== Header ====================== */
+.custom-logo-link {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.site {
+  &-title-link {
+    display: inline-block;
+    vertical-align: middle;
+    color: $color__text-main;
+
+    &:hover, &:focus {
+      text-decoration: none;
+      color: $color__text-main;
+    }
+  }
+
+  &-title {
+    font-size: 2.4rem;
+  }
+
+  &-description {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+}
+
