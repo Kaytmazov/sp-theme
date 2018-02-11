@@ -1,8 +1,11 @@
 .main-navigation {
+  color: #ffffff;
+  background-color: $secondary-color;
+
 	clear: both;
 	display: block;
 	float: left;
-	width: 100%;
+  width: 100%;
 
 	ul {
 		display: none;
@@ -11,12 +14,14 @@
 		padding-left: 0;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
 			position: absolute;
+			z-index: 99999;
 			top: 100%;
 			left: -999em;
-			z-index: 99999;
+      float: left;
+      padding: 15px 25px;
+      background-color: $primary-color;
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 
 			ul {
 				left: -999em;
@@ -24,6 +29,8 @@
 			}
 
 			li {
+        margin-bottom: 10px;
+
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -40,8 +47,9 @@
 
 			a:hover,
 			a.focus {
+        text-decoration: underline;
 			}
-		}
+    }
 
 		li:hover > ul,
 		li.focus > ul {
@@ -50,23 +58,31 @@
 	}
 
 	li {
-		float: left;
 		position: relative;
+		float: left;
 
 		&:hover > a,
 		&.focus > a {
+      background-color: $primary-color;
 		}
-	}
+  }
+
+  .nav-menu > li > a {
+    padding: 13px 25px;
+    font-weight: 600;
+  }
 
 	a {
 		display: block;
-		text-decoration: none;
+    text-decoration: none;
+    color: #ffffff;
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+    background-color: $primary-color;
 	}
 }
 

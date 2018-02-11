@@ -58,10 +58,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-p {
-  margin-bottom: 1.5em;
-}
-
 dfn, cite, em, i {
   font-style: italic;
 }
@@ -127,14 +123,6 @@ hr {
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
-}
-
-ul, ol {
-  margin: 0 0 1.5em 3em;
-}
-
-ul {
-  list-style: disc;
 }
 
 ol {
@@ -207,55 +195,6 @@ input[type="submit"]:focus {
   border-color: #aaa #bbb #bbb;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 3px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
-  color: #111;
-}
-
-select {
-  border: 1px solid #ccc;
-}
-
-textarea {
-  width: 100%;
-}
-
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -263,11 +202,12 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue;
+  color: #038ab0;
 }
 
 a:hover, a:focus, a:active {
-  color: midnightblue;
+  color: #024f65;
+  text-decoration: none;
 }
 
 a:hover, a:active {
@@ -278,6 +218,8 @@ a:hover, a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
+  color: #ffffff;
+  background-color: #3c4554;
   clear: both;
   display: block;
   float: left;
@@ -292,18 +234,24 @@ a:hover, a:active {
 }
 
 .main-navigation ul ul {
-  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
   position: absolute;
+  z-index: 99999;
   top: 100%;
   left: -999em;
-  z-index: 99999;
+  float: left;
+  padding: 15px 25px;
+  background-color: #038ab0;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .main-navigation ul ul ul {
   left: -999em;
   top: 0;
+}
+
+.main-navigation ul ul li {
+  margin-bottom: 10px;
 }
 
 .main-navigation ul ul li:hover > ul,
@@ -315,19 +263,42 @@ a:hover, a:active {
   width: 200px;
 }
 
+.main-navigation ul ul a:hover,
+.main-navigation ul ul a.focus {
+  text-decoration: underline;
+}
+
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
   left: auto;
 }
 
 .main-navigation li {
-  float: left;
   position: relative;
+  float: left;
+}
+
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
+  background-color: #038ab0;
+}
+
+.main-navigation .nav-menu > li > a {
+  padding: 13px 25px;
+  font-weight: 600;
 }
 
 .main-navigation a {
   display: block;
   text-decoration: none;
+  color: #ffffff;
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+  background-color: #038ab0;
 }
 
 /* Small menu. */
@@ -481,6 +452,10 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.widget-title {
+  font-size: 1.3rem;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -489,11 +464,20 @@ a:hover, a:active {
 }
 
 .hentry {
-  margin: 0 0 1.5em;
+  margin-bottom: 3rem;
 }
 
 .updated:not(.published) {
   display: none;
+}
+
+.page-title {
+  font-size: 2rem;
+}
+
+.entry-title {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .page-content,
@@ -505,6 +489,20 @@ a:hover, a:active {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+.list-entry-title {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.list-entry-meta {
+  font-size: 12px;
+  color: #a3a3a3;
+}
+
+.list-entry-content {
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -550,11 +548,6 @@ embed,
 iframe,
 object {
   max-width: 100%;
-}
-
-/* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-  display: inline-block;
 }
 
 /*--------------------------------------------------------------
@@ -631,26 +624,127 @@ object {
 
 /* ====================== Header ====================== */
 .custom-logo-link {
+  display: inline-block;
   margin-right: 10px;
   vertical-align: middle;
+}
+
+.custom-logo-link img {
+  width: 60px;
+}
+
+.site-header {
+  margin-bottom: 2rem;
+  background-color: #038ab0;
+}
+
+.site-header .header-top {
+  padding: 25px 0;
+}
+
+.site-header .search-form .form-control {
+  font-size: 14px;
+  color: #fff;
+  background-color: transparent;
+}
+
+.site-header .search-form .form-control::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.site-header .search-form .form-control:-ms-input-placeholder {
+  color: #fff;
+}
+
+.site-header .search-form .form-control::-ms-input-placeholder {
+  color: #fff;
+}
+
+.site-header .search-form .form-control::placeholder {
+  color: #fff;
 }
 
 .site-title-link {
   display: inline-block;
   vertical-align: middle;
-  color: #333;
+  color: #fff;
 }
 
 .site-title-link:hover, .site-title-link:focus {
   text-decoration: none;
-  color: #333;
+  color: #fff;
 }
 
 .site-title {
-  font-size: 2.4rem;
+  font-size: 1.5rem;
 }
 
 .site-description {
   font-size: 14px;
   margin-bottom: 0;
+}
+
+.kama_breadcrumbs {
+  margin-bottom: 1.5rem;
+  padding: .5rem .75rem;
+  font-size: 14px;
+  background-color: #e9ecef;
+  border-radius: .25rem;
+}
+
+.kama_breadcrumbs .kb_sep {
+  padding-right: .3rem;
+  padding-left: .3rem;
+  color: #6c757d;
+}
+
+.kama_breadcrumbs .kb_title {
+  color: #6c757d;
+}
+
+/* ====================== News-slider ====================== */
+.news-slider-nav {
+  background-color: #038ab0;
+}
+
+.news-slider-nav .nav-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.news-slider-nav .nav-item.slick-current {
+  background-color: red;
+}
+
+.news-slider-nav .nav-item h6 {
+  margin-bottom: 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.carousel-caption {
+  bottom: 40px;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* ====================== Important Info ====================== */
+.important-info .list-group-item {
+  padding: 10px;
+}
+
+.important-info-title {
+  font-size: .8rem;
+}
+
+/* ====================== Структура ====================== */
+.struktura img {
+  width: 100%;
+  max-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* ====================== Документы ====================== */
+.documents .table {
+  font-size: 14px;
 }
