@@ -86,6 +86,19 @@
 	}
 }
 
+.footer-nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+
+  .current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+    background-color: transparent;
+	}
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -98,7 +111,11 @@
 	}
 	.main-navigation ul {
 		display: block;
-	}
+  }
+
+  .footer-nav ul {
+    display: inline-block;
+  }
 }
 
 .comment-navigation,

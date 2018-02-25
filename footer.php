@@ -14,17 +14,21 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sp-theme' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'sp-theme' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'sp-theme' ), 'sp-theme', '<a href="http://underscores.me/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
+    <nav class="footer-nav main-navigation">
+      <div class="container">
+        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Footer Menu', 'sp-theme' ); ?></button>
+        <?php
+          wp_nav_menu( array(
+            'theme_location' => 'footer_menu',
+            'menu_id'        => 'footer-menu',
+            'menu_class'     => 'clearfix nav-menu'
+          ) );
+        ?>
+      </div>
+    </nav>
+    <div class="container">
+      <p class="footer-copyright">© <?php echo date('Y'); ?> г. Все права защищены. Создание сайта: <a href="http://kaytmazov.com" target="_blank">Kaytmazov.com</a></p>
+    </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

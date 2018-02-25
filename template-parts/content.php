@@ -45,6 +45,7 @@
         <div class="alert alert-secondary" role="alert">
           <small>Опубликовано: <b><?php sp_theme_posted_on(); ?></b></small> |
           <small>Просмотров: <b><?php echo get_post_meta ($post->ID,'views',true); ?></b></small>
+          <?php edit_post_link('Редактировать', '| ', '', $post->ID, 'badge badge-danger'); ?>
         </div>
       <?php
       endif; ?>
@@ -62,6 +63,7 @@
         if ( 'post' === get_post_type() ) : ?>
           <div class="list-entry-meta">
             <span class="badge badge-secondary"><?php echo get_the_date(); ?></span>
+            <?php edit_post_link('Редактировать', '', '', $post->ID, 'badge badge-danger'); ?>
           </div><!-- .entry-meta -->
         <?php
         endif; ?>
@@ -73,3 +75,4 @@
   <?php
   endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
+<hr>

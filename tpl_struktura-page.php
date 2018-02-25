@@ -15,9 +15,10 @@ get_header(); ?>
           <?php
           while ( have_posts() ) : the_post(); ?>
 
-            <header class="entry-header">
-              <h1 class="entry-title mb-4"><?php the_title(); ?></h1>
+            <header class="page-header">
+              <h1 class="page-title"><?php the_title(); ?></h1>
             </header><!-- .entry-header -->
+            <hr>
 
           <?php endwhile; ?>
 
@@ -53,12 +54,17 @@ get_header(); ?>
               </div>
               <hr>
             <?php endforeach; ?>
-          </div>
+          </div><!-- /.struktura -->
+
+          <footer class="entry-footer">
+            <?php edit_post_link('Редактировать', '', '', $post->ID, 'badge badge-danger'); ?>
+          </footer><!-- .entry-footer -->
 
         </main><!-- #main -->
       </div><!-- #primary -->
-      <?php
-      get_sidebar(); ?>
+      <aside class="col-3">
+        <?php get_sidebar(); ?>
+      </aside>
     </div><!-- .row -->
   </div><!-- .container -->
 

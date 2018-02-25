@@ -12,25 +12,37 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area col-3">
+<div id="secondary" class="widget-area">
+  <?php
+  $current_page_ID = $post->ID;
+
+  $parent_id = $post->post_parent;
+  if (!$parent_id == 0) : ?>
+    <!-- Боковое меню -->
+    <section class="subnav-items mb-4">
+      <div class="list-group">
+        <?php $mypages = get_pages( array( 'parent' => $parent_id, 'sort_column' => 'menu_order' ) );
+        foreach( $mypages as $page ) : ?>
+          <a class="list-group-item list-group-item-action <?php if ( ($page->ID) == $current_page_ID ) echo 'active' ?>" href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a>
+        <?php
+        endforeach; ?>
+      </div>
+    </section>
+  <?php
+  endif; ?>
   <!-- Глава -->
   <section class="mb-4">
     <div class="card">
       <div class="card-header">Глава администрации</div>
       <img class="card-img-top" src="/wp-content/uploads/2018/02/glava.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h6 class="card-title">Магомедов Магомед Алиевич</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <div class="card-body p-3">
+        <h6 class="card-title text-center">Магомедов Магомед Алиевич</h6>
+        <p class="card-text">Приветствую вас на официальном сайте муниципального образования сельского поселения "село Цада"</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <li class="list-group-item"><a href="#">Биография</a></li>
+        <li class="list-group-item"><a href="#">График приёма</a></li>
       </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
     </div>
   </section>
 
@@ -66,4 +78,4 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
   </section>
 
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+</div><!-- #secondary -->

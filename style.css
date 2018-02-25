@@ -106,16 +106,7 @@ big {
 # Elements
 --------------------------------------------------------------*/
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  font-size: 16px;
 }
 
 hr {
@@ -301,6 +292,19 @@ a:hover, a:active {
   background-color: #038ab0;
 }
 
+.footer-nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.footer-nav .current_page_item > a,
+.footer-nav .current-menu-item > a,
+.footer-nav .current_page_ancestor > a,
+.footer-nav .current-menu-ancestor > a {
+  background-color: transparent;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -313,6 +317,9 @@ a:hover, a:active {
   }
   .main-navigation ul {
     display: block;
+  }
+  .footer-nav ul {
+    display: inline-block;
   }
 }
 
@@ -464,7 +471,7 @@ a:hover, a:active {
 }
 
 .hentry {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .updated:not(.published) {
@@ -622,6 +629,12 @@ object {
   display: block;
 }
 
+/* ====================== Общие стили ====================== */
+.list-group-item.active {
+  background-color: #038ab0;
+  border-color: #038ab0;
+}
+
 /* ====================== Header ====================== */
 .custom-logo-link {
   display: inline-block;
@@ -747,4 +760,64 @@ object {
 /* ====================== Документы ====================== */
 .documents .table {
   font-size: 14px;
+}
+
+/* ====================== Контакты ====================== */
+.icon {
+  display: inline-block;
+  padding: 0;
+  font-size: 0;
+  background: none;
+  border: none;
+  outline: none;
+  vertical-align: middle;
+}
+
+.icon + .icon {
+  margin-left: 10px;
+}
+
+.icon svg {
+  -webkit-transition-duration: .3s;
+       -o-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+.icon-instagram svg, .icon-vk svg, .icon-facebook svg {
+  width: 50px;
+  height: 50px;
+  stroke: #333;
+  stroke-width: 15;
+  fill: none;
+}
+
+.icon-instagram:hover svg {
+  stroke: #e43f85;
+}
+
+.icon-vk:hover svg {
+  stroke: #507299;
+}
+
+.icon-facebook:hover svg {
+  stroke: #3b5998 !important;
+}
+
+/* ====================== Footer ====================== */
+.site-footer {
+  color: #ffffff;
+  background-color: #3c4554;
+}
+
+.footer-copyright {
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer-copyright a {
+  color: #04b1e2;
+}
+
+.footer-copyright a:hover {
+  color: #05c5fb;
 }

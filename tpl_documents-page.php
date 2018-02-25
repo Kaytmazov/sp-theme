@@ -15,10 +15,10 @@ get_header(); ?>
           <?php
           while ( have_posts() ) : the_post(); ?>
 
-            <header class="entry-header">
-              <h1 class="entry-title mb-4"><?php the_title(); ?></h1>
+            <header class="page-header">
+              <h1 class="page-title"><?php the_title(); ?></h1>
             </header><!-- .entry-header -->
-
+            <hr>
           <?php endwhile; ?>
 
           <!-- Documents -->
@@ -35,37 +35,44 @@ get_header(); ?>
               <tbody>
                 <?php
                 $documents = get_field('документы');
-                foreach( $documents as $document ): ?>
-                  <tr>
-                    <th scope="row"><?php echo $document['дата']; ?></th>
-                    <td>
-                      <a href="<?php echo $file['url']; ?>">
-                        <?php echo $document['название']; ?></td>
-                      </a>
-                    <td><?php echo $document['заголовок']; ?></td>
-                    <td class="text-center">
-                      <?php
-                      $file = $document['файл'];
-                      $filesize = filesize( get_attached_file( $file['id'] ) );
-                      $filesize = size_format($filesize, 2);
-
-                      if( $file ): ?>
+                if ( $documents ) :
+                  foreach( $documents as $document ): ?>
+                    <tr>
+                      <th scope="row"><?php echo $document['дата']; ?></th>
+                      <td>
                         <a href="<?php echo $file['url']; ?>">
-                          <img src="<?php echo $file['icon']; ?>" alt="">
-                          <span class="d-block mt-1 text-nowrap"><?php echo $filesize; ?></span>
+                          <?php echo $document['название']; ?></td>
                         </a>
-                      <?php endif; ?>
-                    </td>
-                  </tr>
-                <?php endforeach; ?>
+                      <td><?php echo $document['заголовок']; ?></td>
+                      <td class="text-center">
+                        <?php
+                        $file = $document['файл'];
+                        $filesize = filesize( get_attached_file( $file['id'] ) );
+                        $filesize = size_format($filesize, 2);
+
+                        if( $file ): ?>
+                          <a href="<?php echo $file['url']; ?>">
+                            <img src="<?php echo $file['icon']; ?>" alt="">
+                            <span class="d-block mt-1 text-nowrap"><?php echo $filesize; ?></span>
+                          </a>
+                        <?php endif; ?>
+                      </td>
+                    </tr>
+                  <?php endforeach;
+                endif; ?>
               </tbody>
             </table>
-          </div>
+          </div><!-- /.documents -->
+
+          <footer class="entry-footer">
+            <?php edit_post_link('Редактировать', '', '', $post->ID, 'badge badge-danger'); ?>
+          </footer><!-- .entry-footer -->
 
         </main><!-- #main -->
       </div><!-- #primary -->
-      <?php
-      get_sidebar(); ?>
+      <aside class="col-3">
+        <?php get_sidebar(); ?>
+      </aside>
     </div><!-- .row -->
   </div><!-- .container -->
 

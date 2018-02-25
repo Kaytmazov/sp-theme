@@ -41,7 +41,8 @@ if ( ! function_exists( 'sp_theme_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'sp-theme' ),
+      'menu-1' => esc_html__( 'Primary', 'sp-theme' ),
+      'footer_menu' => 'Footer'
 		) );
 
 		/*
@@ -196,6 +197,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Отключаем Toolbar на сайте
  */
 add_filter('show_admin_bar', '__return_false');
+
+/**
+ * Зарегистрировать размер изображений для слайдера
+ */
+if ( function_exists( 'add_image_size' ) ) {
+  add_image_size( 'slider-photo', 825, 549, true ); //(cropped)
+}
 
 /**
  * Выводим excerpt без <p>

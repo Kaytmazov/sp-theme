@@ -52,7 +52,7 @@
               <div class="input-group">
                 <input type="search" class="form-control border border-white" value="<?php echo get_search_query() ?>" name="s" placeholder="<?php echo esc_attr_x( 'Поиск', 'placeholder' ) ?>" aria-label="Поиск" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                  <button class="btn btn-light" type="submit" value="<?php echo esc_attr_x( 'Поиск', 'submit button' ) ?>">Найти</button>
+                  <button class="btn btn-light" type="submit" value="<?php echo esc_attr_x( 'Поиск', 'submit button' ) ?>"><img src="<?php echo bloginfo('template_url'); ?>/img/icons/icon-search.svg" width="24" height="24" alt=""></button>
                 </div>
               </div>
             </form>

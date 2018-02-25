@@ -52,8 +52,9 @@ get_header(); ?>
 
         </main><!-- #main -->
       </div><!-- #primary -->
-      <?php
-      get_sidebar(); ?>
+      <aside class="col-3">
+        <?php get_sidebar(); ?>
+      </aside>
     </div><!-- .row -->
   </div><!-- .container -->
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="400px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Instagram</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="instagram">
+        <rect id="Rectangle" x="7.5" y="7.5" width="385" height="385" rx="85"></rect>
+        <circle id="Rectangle" cx="200" cy="200" r="87.5"></circle>
+        <circle id="Oval" cx="320" cy="80" r="20"></circle>
+    </g>
+</svg>
