@@ -16,7 +16,6 @@
 	<footer id="colophon" class="site-footer">
     <nav class="footer-nav main-navigation">
       <div class="container">
-        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Footer Menu', 'sp-theme' ); ?></button>
         <?php
           wp_nav_menu( array(
             'theme_location' => 'footer_menu',
@@ -27,7 +26,7 @@
       </div>
     </nav>
     <div class="container">
-      <p class="footer-copyright">© <?php echo date('Y'); ?> г. Все права защищены. Создание сайта: <a href="http://kaytmazov.com" target="_blank">Kaytmazov.com</a></p>
+      <p class="footer-copyright">© <?php echo date('Y'); ?> г. Все права защищены. <span>Создание сайта: <a href="http://kaytmazov.com" target="_blank">Kaytmazov.com</a></span></p>
     </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

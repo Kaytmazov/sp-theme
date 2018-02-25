@@ -1,0 +1,63 @@
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991px) {
+  .footer-copyright {
+    margin-top: 1rem;
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767px) {
+  .hide-sm {
+    display: none;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption h5 {
+    font-size: 14px;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) {
+  .hide-xs {
+    display: none;
+  }
+
+  .carousel-caption {
+    bottom: 20px;
+  }
+
+  .list-entry {
+    &-title {
+      font-size: 1rem;
+    }
+
+    &-content {
+      display: none;
+    }
+  }
+
+  .struktura {
+    .col-sm-4 {
+      padding-right: 15px;
+    }
+
+    img {
+      margin-bottom: 20px;
+    }
+  }
+
+  .footer-copyright span {
+    display: block;
+  }
+}

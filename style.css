@@ -218,7 +218,7 @@ a:hover, a:active {
 }
 
 .main-navigation ul {
-  display: none;
+  display: block;
   list-style: none;
   margin: 0;
   padding-left: 0;
@@ -274,6 +274,15 @@ a:hover, a:active {
   background-color: #038ab0;
 }
 
+.main-navigation.toggled ul {
+  display: block;
+}
+
+.main-navigation.toggled .nav-menu {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
 .main-navigation .nav-menu > li > a {
   padding: 13px 25px;
   font-weight: 600;
@@ -298,6 +307,10 @@ a:hover, a:active {
   text-align: center;
 }
 
+.footer-nav ul {
+  display: inline-block;
+}
+
 .footer-nav .current_page_item > a,
 .footer-nav .current-menu-item > a,
 .footer-nav .current_page_ancestor > a,
@@ -306,20 +319,33 @@ a:hover, a:active {
 }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block;
+.menu-toggle {
+  display: none;
 }
 
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
+.menu-toggle {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 991px) {
+  .main-navigation .nav-menu > li > a {
+    padding: 10px 18px;
+  }
+  .footer-nav {
     display: none;
   }
-  .main-navigation ul {
+}
+
+@media screen and (max-width: 767px) {
+  .menu-toggle {
     display: block;
   }
-  .footer-nav ul {
-    display: inline-block;
+  .main-navigation .nav-menu > li {
+    float: none;
+  }
+  .main-navigation ul {
+    display: none;
   }
 }
 
@@ -740,6 +766,11 @@ object {
   text-shadow: 1px 1px 2px black;
 }
 
+/* ====================== News-list ====================== */
+.news-list .card-deck .card-text {
+  font-size: 14px;
+}
+
 /* ====================== Important Info ====================== */
 .important-info .list-group-item {
   padding: 10px;
@@ -750,6 +781,10 @@ object {
 }
 
 /* ====================== Структура ====================== */
+.struktura .col-sm-4 {
+  padding-right: 0;
+}
+
 .struktura img {
   width: 100%;
   max-height: 300px;
@@ -820,4 +855,55 @@ object {
 
 .footer-copyright a:hover {
   color: #05c5fb;
+}
+
+/*--------------------------------------------------------------
+# RESPONSIVE
+--------------------------------------------------------------*/
+@media (max-width: 1199px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 991px) {
+  .footer-copyright {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hide-sm {
+    display: none;
+  }
+  .page-title {
+    font-size: 1.5rem;
+  }
+  .carousel-caption h5 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hide-xs {
+    display: none;
+  }
+  .carousel-caption {
+    bottom: 20px;
+  }
+  .list-entry-title {
+    font-size: 1rem;
+  }
+  .list-entry-content {
+    display: none;
+  }
+  .struktura .col-sm-4 {
+    padding-right: 15px;
+  }
+  .struktura img {
+    margin-bottom: 20px;
+  }
+  .footer-copyright span {
+    display: block;
+  }
 }

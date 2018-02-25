@@ -7,7 +7,7 @@ get_header(); ?>
 
   <div class="container">
     <div class="row">
-      <div id="primary" class="content-area col-9">
+      <div id="primary" class="content-area col-lg-9">
         <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
 
         <main id="main" class="site-main">
@@ -28,7 +28,7 @@ get_header(); ?>
             $structures = get_field('структура_администрации');
             foreach( $structures as $structura ): ?>
               <div class="row mb-4">
-                <div class="col-4 pr-0">
+                <div class="col-sm-4">
                   <?php
                   if($structura['фото']) : ?>
                     <img class="rounded" src="<?php echo $structura['фото']; ?>" alt="Фото сотрудника">
@@ -38,7 +38,7 @@ get_header(); ?>
                   endif; ?>
                 </div>
 
-                <div class="col-8">
+                <div class="col-sm-8">
                   <h5 class="mb-4"><?php echo $structura['фио']; ?></h5>
                   <p><b>Должность:</b> <?php echo $structura['должность']; ?></p>
 
@@ -62,7 +62,7 @@ get_header(); ?>
 
         </main><!-- #main -->
       </div><!-- #primary -->
-      <aside class="col-3">
+      <aside class="col-lg-3">
         <?php get_sidebar(); ?>
       </aside>
     </div><!-- .row -->

@@ -7,7 +7,7 @@ get_header(); ?>
 
   <div class="container">
     <div class="row">
-      <div id="primary" class="content-area col-9">
+      <div id="primary" class="content-area col-lg-9">
         <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
 
         <main id="main" class="site-main">
@@ -61,7 +61,7 @@ get_header(); ?>
 
         </main><!-- #main -->
       </div><!-- #primary -->
-      <aside class="col-3">
+      <aside class="col-lg-3">
         <?php get_sidebar(); ?>
       </aside>
     </div><!-- .row -->

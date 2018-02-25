@@ -46,7 +46,7 @@
             </a>
           </div><!-- .site-branding -->
 
-          <div class="col-md-4">
+          <div class="col-md-4 d-none d-md-block">
             <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ) ?>" >
               <label class="screen-reader-text"><?php echo _x( 'Поиск:', 'label' ) ?></label>
               <div class="input-group">
@@ -62,9 +62,12 @@
       </div>
     </div>
 
-		<nav id="site-navigation" class="main-navigation">
+		<nav id="site-navigation" class="main-navigation navbar-dark">
       <div class="container">
-        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sp-theme' ); ?></button>
+        <button class="navbar-toggler menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+          <span class="screen-reader-text"><?php esc_html_e( 'Основное меню', 'sp-theme' ); ?></span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <?php
           wp_nav_menu( array(
             'theme_location' => 'menu-1',

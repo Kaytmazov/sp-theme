@@ -48,7 +48,7 @@ get_header(); ?>
 
         </main><!-- #main -->
       </section><!-- #primary -->
-      <aside class="col-3">
+      <aside class="col-lg-3">
         <?php get_sidebar(); ?>
       </aside>
     </div><!-- .row -->

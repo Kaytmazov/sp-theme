@@ -7,7 +7,7 @@ get_header(); ?>
 
   <div class="container">
     <div class="row">
-      <div id="primary" class="content-area col-9">
+      <div id="primary" class="content-area col-lg-9">
         <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
 
         <main id="main" class="site-main">
@@ -26,9 +26,9 @@ get_header(); ?>
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th scope="col">Дата</th>
+                  <th scope="col" class="hide-xs">Дата</th>
                   <th scope="col" style="min-width: 200px;">Документ</th>
-                  <th scope="col">Заголовок</th>
+                  <th scope="col" class="hide-sm">Заголовок</th>
                   <th scope="col">Скачать</th>
                 </tr>
               </thead>
@@ -38,12 +38,12 @@ get_header(); ?>
                 if ( $documents ) :
                   foreach( $documents as $document ): ?>
                     <tr>
-                      <th scope="row"><?php echo $document['дата']; ?></th>
+                      <th scope="row" class="hide-xs"><?php echo $document['дата']; ?></th>
                       <td>
                         <a href="<?php echo $file['url']; ?>">
                           <?php echo $document['название']; ?></td>
                         </a>
-                      <td><?php echo $document['заголовок']; ?></td>
+                      <td class="hide-sm"><?php echo $document['заголовок']; ?></td>
                       <td class="text-center">
                         <?php
                         $file = $document['файл'];
@@ -70,7 +70,7 @@ get_header(); ?>
 
         </main><!-- #main -->
       </div><!-- #primary -->
-      <aside class="col-3">
+      <aside class="col-lg-3">
         <?php get_sidebar(); ?>
       </aside>
     </div><!-- .row -->

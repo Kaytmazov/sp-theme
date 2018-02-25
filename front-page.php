@@ -2,7 +2,7 @@
 get_header(); ?>
   <div class="container">
     <div class="row">
-      <div id="primary" class="content-area col-9">
+      <div id="primary" class="content-area col-lg-9">
         <main id="main" class="site-main">
 
           <div id="newsCarousel" class="carousel slide mb-5" data-ride="carousel">
@@ -30,7 +30,7 @@ get_header(); ?>
                   <div class="carousel-item <?php if($i == 0) { ?>active<?php } ?>">
                     <a href="<?php the_permalink(); ?>">
                       <?php the_post_thumbnail('slider-photo', 'class=d-block w-100'); ?>
-                      <div class="carousel-caption d-none d-md-block">
+                      <div class="carousel-caption">
                         <h5><?php the_title(); ?></h5>
                       </div>
                     </a>
@@ -72,7 +72,7 @@ get_header(); ?>
                       <h6 class="card-title">
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                       </h6>
-                      <p class="card-text small">
+                      <p class="card-text">
                         <?php the_excerpt(); ?>
                         <?php edit_post_link('Редактировать', '<br>', '', $post->ID, 'badge badge-danger'); ?>
                       </p>
@@ -137,7 +137,7 @@ get_header(); ?>
           </div><!-- .news-list -->
         </main><!-- #main -->
       </div><!-- #primary -->
-      <aside class="col-3">
+      <aside class="col-lg-3">
         <?php get_sidebar(); ?>
       </aside>
     </div><!-- .row -->

@@ -198,6 +198,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   text-shadow: 1px 1px 2px black;
 }
 
+/* ====================== News-list ====================== */
+.news-list .card-deck .card-text {
+  font-size: 14px;
+}
+
 /* ====================== Important Info ====================== */
 .important-info {
   .list-group-item {
@@ -211,6 +216,10 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 /* ====================== Структура ====================== */
 .struktura {
+  .col-sm-4 {
+    padding-right: 0;
+  }
+
   img {
     width: 100%;
     max-height: 300px;
@@ -284,3 +293,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     }
   }
 }
+
+/*--------------------------------------------------------------
+# RESPONSIVE
+--------------------------------------------------------------*/
+@import "responsive";
