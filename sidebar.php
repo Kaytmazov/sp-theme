@@ -32,17 +32,24 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
   endif; ?>
   <div class="row">
     <!-- Глава -->
+    <?php
+      $glava_page_ID = 62;
+      $glava_page = get_post( $glava_page_ID );
+      $glava_photo = get_the_post_thumbnail( $glava_page_ID, 'medium', array('class' => 'card-img-top') );
+      $glava_fio = get_field('fio_glava', $glava_page_ID);
+      $glava_page_link = get_permalink( $glava_page );
+    ?>
     <section class="col-sm-6 col-lg-12 mb-4">
       <div class="card">
         <div class="card-header">Глава администрации</div>
-        <img class="card-img-top" src="/wp-content/uploads/2018/02/glava.jpg" alt="Card image cap">
+        <?php echo $glava_photo; ?>
         <div class="card-body p-3">
-          <h6 class="card-title text-center">Магомедов Магомед Алиевич</h6>
+          <h6 class="card-title text-center"><?php echo $glava_fio; ?></h6>
           <p class="card-text">Приветствую вас на официальном сайте муниципального образования сельского поселения "село Цада"</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><a href="#">Биография</a></li>
-          <li class="list-group-item"><a href="#">График приёма</a></li>
+          <li class="list-group-item"><a href="<?php echo $glava_page_link ?>">Биография</a></li>
+          <li class="list-group-item"><a href="<?php echo $glava_page_link ?>">График приёма</a></li>
         </ul>
       </div>
     </section>

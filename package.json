@@ -2,7 +2,7 @@
   "name": "sp-theme",
   "version": "1.0.0",
   "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build",
@@ -19,19 +19,18 @@
   },
   "homepage": "https://github.com/Kaytmazov/sp-theme#readme",
   "devDependencies": {
-    "autoprefixer": "^7.2.5",
-    "browser-sync": "^2.23.5",
+    "autoprefixer": "^9.1.5",
+    "browser-sync": "^2.24.7",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-csso": "^3.0.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-postcss": "^7.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-svgmin": "^1.2.4",
-    "gulp-svgstore": "^6.1.1",
-    "gulp-uglify": "^3.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-svgmin": "^2.1.0",
+    "gulp-svgstore": "^7.0.0",
+    "gulp-uglify": "^3.0.1",
     "run-sequence": "^2.2.1"
   }
 }

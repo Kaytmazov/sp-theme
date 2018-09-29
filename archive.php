@@ -9,7 +9,7 @@
 
 get_header(); ?>
   <div class="container">
-    <div class="row">
+    <div class="row posts-list">
 
       <div id="primary" class="content-area col-lg-9">
         <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>

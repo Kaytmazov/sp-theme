@@ -3,6 +3,16 @@
   html {
     font-size: 14px;
   }
+
+  .posts-list {
+    .card-deck img {
+      height: 218px;
+    }
+
+    article img {
+      height: 149px;
+    }
+  }
 }
 
 // Medium devices (tablets, less than 992px)
@@ -25,6 +35,16 @@
   .carousel-caption h5 {
     font-size: 14px;
   }
+
+  .posts-list {
+    .card-deck img {
+      height: 158px;
+    }
+
+    article img {
+      height: 109px;
+    }
+  }
 }
 
 // Extra small devices (portrait phones, less than 576px)
@@ -35,6 +55,17 @@
 
   .carousel-caption {
     bottom: 20px;
+  }
+
+  .posts-list {
+    .card-deck img {
+      height: auto;
+      max-height: 220px;
+    }
+
+    article img {
+      height: auto;
+    }
   }
 
   .list-entry {

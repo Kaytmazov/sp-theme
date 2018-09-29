@@ -26,9 +26,9 @@ get_header(); ?>
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th scope="col" class="hide-xs">Дата</th>
+                  <th scope="col">Дата</th>
                   <th scope="col" style="min-width: 200px;">Документ</th>
-                  <th scope="col" class="hide-sm">Заголовок</th>
+                  <th scope="col">Заголовок</th>
                   <th scope="col">Скачать</th>
                 </tr>
               </thead>
@@ -38,24 +38,21 @@ get_header(); ?>
                 if ( $documents ) :
                   foreach( $documents as $document ): ?>
                     <tr>
-                      <th scope="row" class="hide-xs"><?php echo $document['дата']; ?></th>
+                      <th scope="row"><?php echo $document['дата']; ?></th>
                       <td>
-                        <a href="<?php echo $file['url']; ?>">
-                          <?php echo $document['название']; ?></td>
-                        </a>
-                      <td class="hide-sm"><?php echo $document['заголовок']; ?></td>
-                      <td class="text-center">
                         <?php
                         $file = $document['файл'];
                         $filesize = filesize( get_attached_file( $file['id'] ) );
-                        $filesize = size_format($filesize, 2);
-
-                        if( $file ): ?>
-                          <a href="<?php echo $file['url']; ?>">
-                            <img src="<?php echo $file['icon']; ?>" alt="">
-                            <span class="d-block mt-1 text-nowrap"><?php echo $filesize; ?></span>
-                          </a>
-                        <?php endif; ?>
+                        $filesize = size_format($filesize, 2); ?>
+                        <a href="<?php echo $file['url']; ?>" target="_blank">
+                          <?php echo $document['название']; ?></td>
+                        </a>
+                      <td><?php echo $document['заголовок']; ?></td>
+                      <td class="text-center">
+                        <a href="<?php echo $file['url']; ?>" target="_blank">
+                          <img src="<?php echo $file['icon']; ?>" alt="">
+                          <span class="d-block mt-1 text-nowrap"><?php echo $filesize; ?></span>
+                        </a>
                       </td>
                     </tr>
                   <?php endforeach;

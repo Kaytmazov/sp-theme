@@ -199,8 +199,24 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 /* ====================== News-list ====================== */
-.news-list .card-deck .card-text {
-  font-size: 14px;
+.posts-list {
+  .card-deck {
+    img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .card-text {
+      font-size: 14px;
+    }
+  }
+
+  article img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+  }
 }
 
 /* ====================== Important Info ====================== */

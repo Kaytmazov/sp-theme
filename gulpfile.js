@@ -5,7 +5,6 @@ var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
-var minify = require('gulp-csso');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var svgstore = require('gulp-svgstore');
@@ -59,7 +58,11 @@ gulp.task('images', function() {
 // SVG sprite
 gulp.task('svg-sprite', function() {
   return gulp.src('assets/img/svg-sprite/*.svg')
-    .pipe(svgmin())
+    .pipe(svgmin({
+      plugins: [{
+        removeViewBox: false
+      }]
+    }))
     .pipe(svgstore({
       inlineSvg: true
     }))
@@ -70,7 +73,11 @@ gulp.task('svg-sprite', function() {
 // SVG min
 gulp.task('svg-min', function() {
   return gulp.src('assets/img/svg-icons/*.svg')
-    .pipe(svgmin())
+    .pipe(svgmin({
+      plugins: [{
+        removeViewBox: false
+      }]
+    }))
     .pipe(gulp.dest('img/icons'));
 });
 
@@ -96,7 +103,7 @@ gulp.task('php:update', function(done) {
 // Browser Sync
 gulp.task('serve', function() {
   browserSync.init({
-    proxy: 'tsada.ru'
+    proxy: 'uzdalroso:8888'
   });
 
   gulp.watch('assets/sass/**/*.scss', ['style']);

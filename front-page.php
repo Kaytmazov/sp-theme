@@ -53,7 +53,7 @@ get_header(); ?>
           </div>
 
           <!-- Список последних новостей -->
-          <div class="news-list mb-5">
+          <div class="posts-list mb-5">
             <div class="card-deck mb-5">
             <?php $args = array(
               'cat' => $category_id,
